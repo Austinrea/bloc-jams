@@ -28,6 +28,7 @@
      position: relative; /* positioning will be explained in a resource */
      left: 2rem;
      cursor: pointer;  /* produces the finger-pointer icon when you hover over the logo */
+     
  }
  
  .navbar .links-container {
@@ -62,7 +63,12 @@
    /* #5 */
  .links-container .navbar-link:hover {
      color: rgb(233,50,117);
+     
  }
+
+.links-container .navbar-link:active {
+    background-color: white;
+}
 
 .container {
      margin: 0 auto;
