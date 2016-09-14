@@ -28,6 +28,28 @@
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
+// My Own Example Album
+var albumAphex = {
+     title: 'Syro',
+     artist: 'Aphex Twin',
+     label: 'Warp',
+     year: '2014',
+     albumArtUrl: 'assets/images/album_covers/Aphex_Syro.png',
+     songs: [
+         { title: 'minipops 67 (source field mix)', duration: '4:47' },
+         { title: 'XMAS_EVET10 (thanaton3 mix)', duration: '10:31' },
+         { title: 'produk 29', duration: '5:03'},
+         { title: '4 bit 9d api+e+6', duration: '4:28' },
+         { title: '180db_', duration: '3:11'},
+         { title: 'CIRCLONT6A (syrobonkus mix)', duration: '6:00'},
+         { title: 'fz pseudotimestretch+e+3', duration: '0:58'},
+         { title: 'CIRCLONT14 (shrymoming mix)', duration: '7:21'},
+         { title: 'syro u473t8+e (piezoluminescence mix)', duration: '6:32'},
+         { title: 'PAPAT4 (pineal mix)', duration: '4:18'},
+         { title: 's950tx16wasr10 (earth portal mix)', duration: '6:01'},
+         { title: 'aisatsana', duration: '5:21'}
+     ]
+ };
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -39,14 +61,16 @@ var createSongRow = function(songNumber, songName, songLength) {
  
      return template;
  };
+
+
+// #1
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
 var setCurrentAlbum = function(album) {
-     // #1
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
-     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
- 
      // #2
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
@@ -64,4 +88,13 @@ var setCurrentAlbum = function(album) {
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
- };
+     var albums = [albumPicasso, albumMarconi, albumAphex];
+     var index = 1;
+     albumImage.addEventListener("click", function(event) {
+         setCurrentAlbum(albums[index]);
+         index++;
+         if (index == albums.length) {
+             index = 0;
+         }
+     });
+};
