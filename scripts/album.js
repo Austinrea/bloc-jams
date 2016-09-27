@@ -39,6 +39,7 @@ var createSongRow = function(songNumber, songName, songLength) {
     };
 
      var offHover = function(event) {
+         console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);
         var songNumberCell = $(this).find('.song-item-number');
         var songNumber = parseInt(songNumberCell.attr('data-song-number'));
 
