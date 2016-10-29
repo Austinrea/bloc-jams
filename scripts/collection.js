@@ -1,31 +1,31 @@
- var buildCollectionItemTemplate = function() {
-     var template =
-     '<div class="collection-album-container column fourth">'
-   + '  <img src="assets/images/album_covers/01.png"/>'
-   + '  <div class="collection-album-info caption">'
-   + '    <p>'
-   + '      <a class="album-name" href="/bloc-jams/album.html"> The Colors </a>'
-   + '      <br/>'
-   + '      <a href="/bloc-jams/album.html"> Pablo Picasso </a>'
-   + '      <br/>'
-   + '      X songs'
-   + '      <br/>'
-   + '    </p>'
-   + '  </div>'
-   + '</div>'
-   ;
+var buildCollectionItemTemplate = function() {
+    var template =
+    '<div class="collection-album-container column fourth">'
+  + '  <img src="assets/images/album_covers/01.png"/>'
+  + '  <div class="collection-album-info caption">'
+  + '    <p>'
+  + '      <a class="album-name" href="/bloc-jams/album.html"> The Colors </a>'
+  + '      <br/>'
+  + '      <a href="/bloc-jams/album.html"> Pablo Picasso </a>'
+  + '      <br/>'
+  + '      X songs'
+  + '      <br/>'
+  + '    </p>'
+  + '  </div>'
+  + '</div>'
+  ;
           
-     return $(template);
- };
+    return $(template);
+};
 
- $(window).load(function() {
+$(window).load(function() {
      
-     var $collectionContainer = $('.album-covers');
+    var $collectionContainer = $('.album-covers');
      
-     $collectionContainer.empty();
+    $collectionContainer.empty();
      
-     for (var i = 0; i < 12; i++) {
-         var $newThumbnail = buildCollectionItemTemplate();
-         $collectionContainer.append($newThumbnail);
-     }
- });
+    for (var i = 0; i < 12; i++) {
+        var $newThumbnail = buildCollectionItemTemplate();
+        $collectionContainer.append($newThumbnail);
+    }
+});
